@@ -72,7 +72,7 @@ def database():
 
 @app.route('/time')
 def time():
-    url = "http://127.0.0.1:3000/?api_key={}".format(os.environ.get("hjshjhdjah kjshkjdhjs"))
+    url = "http://0.0.0.0:3000/?api_key={}".format(os.environ.get("hjshjhdjah kjshkjdhjs"))
 
     response = urllib.request.urlopen(url)
     data = response.read()
@@ -80,7 +80,7 @@ def time():
     cur_time=str(data)
     return cur_time
 if __name__ == '__main__':
-    app.run(debug=True,port=5000)
+    app.run(debug=True,port=5000,host="0.0.0.0")
 
 
 
